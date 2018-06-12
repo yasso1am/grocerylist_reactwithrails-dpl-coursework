@@ -20,11 +20,11 @@ const Product = ({
   <div className="row">
   <div className="col s4">
     <div className="card-panel teal">
-      <h1 className="center">
-        {name}
-      </h1>
+      <h2 className="center">
+        {category}
+      </h2>
       <div> 
-        {category} 
+        {name} 
       </div>
       <div> 
         ${price} 
@@ -33,10 +33,10 @@ const Product = ({
         <input
           id={`product-${id}`}
           type="checkbox"
-          defaultChecked={complete}
+          defaultChecked={purchased}
           onClick={ () => updateProduct(id)}
         />
-        <label htmlFor={`product-${id}`}> Pruchased? </label>
+        <label htmlFor={`product-${id}`}> Purchased? </label>
         <div
           style={styles.pointer}
           onClick={()=> deleteProduct(id)}

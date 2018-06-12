@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import ProductForm from '/.components/ProductForm';
-import ProductList from '/.components/ProductList';
+import ProductForm from './components/ProductForm';
+import ProductList from './components/ProductList';
 
 class App extends Component {
   state = { groceries: [] }
 
   componentDidMount() {
     fetch('/api/products')
-    .then( res => res.json() )
-    .then( groceries => this.setState({ groceries}) )
-  }
+    .then( res => res.json())
+    .then( groceries => { 
+      this.setState({groceries})
+      })
+    }
 
   addProduct = (name, category, price) => {
     const product = { name, category, price }
@@ -53,11 +55,13 @@ class App extends Component {
   render() {
     return (
       <div className="container">
+        <h1 className="center">Andrew's Grocery List</h1>
         <ProductForm addProduct={this.addProduct} />
+        <hr />
         <ProductList
           updateProduct={this.updateProduct}
           deleteProduct={this.deleteProduct}
-          products={this.state.groceries}
+          groceries={this.state.groceries}
           />
       </div>
 

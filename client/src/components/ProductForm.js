@@ -27,20 +27,20 @@ render () {
         onChange={this.handleChange}
       />
       <input className="col s4"
-        name="Category"
+        name="category"
         placeholder="Product Category"
         required
         value={category}
         onChange={this.handleChange}
       />
-      <iinput className="col s2"
+      <input className="col s4"
         name="price"
         placeholder="Price"
         required
         value={price}
         onChange={this.handleChange}
       />
-      <button className="btn col s2"> Add Product </button>
+        <button className="btn col s1"> Add Product </button>
     </form>
     )
   }

@@ -2,7 +2,7 @@ class Api::ProductsController < ApplicationController
   before_action :set_product, only: [:update, :destroy]
 
   def index
-    render json: Product.all.order(:created_at)
+    render json: Product.all
   end
 
   def create
