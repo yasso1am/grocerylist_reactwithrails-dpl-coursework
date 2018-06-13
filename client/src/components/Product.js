@@ -20,6 +20,7 @@ const Product = ({
   <div className="row">
   <div className="col s4">
     <div className="card-panel teal">
+      <p className="white-text" style= { purchased ? styles.purchased : {} }>
       <h2 className="center">
         {category}
       </h2>
@@ -29,7 +30,7 @@ const Product = ({
       <div> 
         ${price} 
       </div>
-      <p className="white-text" style= { purchased ? styles.purchased : {} }></p>
+      </p>
         <input
           id={`product-${id}`}
           type="checkbox"
@@ -39,7 +40,7 @@ const Product = ({
         <label htmlFor={`product-${id}`}> Purchased? </label>
         <div
           style={styles.pointer}
-          onClick={()=> deleteProduct(id)}
+          onClick={ () => deleteProduct(id)}
           >
           Delete
         </div>

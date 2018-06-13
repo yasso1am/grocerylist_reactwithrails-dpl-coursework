@@ -15,7 +15,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def update
-    @product.update(product_params)
+    @product.update(purchased: !@product.purchased)
     render json: @product
   end
 

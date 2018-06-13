@@ -30,16 +30,16 @@ class App extends Component {
   }
 
   updateProduct = (id) => {
-    fetch(`/api/products/${id}`, { method: 'PUT' } )
+    debugger
+    fetch(`/api/products/${id}`, { method: 'PUT' })
     .then (res => res.json() )
     .then ( product => {
       const groceries = this.state.groceries.map ( p => {
         if (p.id === id)
           return product
-        else
-          return p
-      })
-      this.setState({groceries})
+        return p;
+      });
+      this.setState({groceries});
     })
   }
 
@@ -57,16 +57,12 @@ class App extends Component {
       <div className="container">
         <h1 className="center">Andrew's Grocery List</h1>
         <ProductForm addProduct={this.addProduct} />
-        <hr />
         <ProductList
           updateProduct={this.updateProduct}
           deleteProduct={this.deleteProduct}
           groceries={this.state.groceries}
           />
       </div>
-
-      
-      
 
     );
   }
